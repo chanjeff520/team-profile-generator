@@ -3,7 +3,7 @@ const Employee = require("../lib/Employee");
 
 
 describe("Employee", () => {
-    describle("Initialization", () => {
+    describe("Initialization", () => {
         
         const testEmployee = new Employee("testGuy", 0, "test@gmail.com")
         it("Should create an object of Employee", ()=>{

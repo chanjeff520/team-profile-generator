@@ -9,7 +9,7 @@ describe("Engineer", () => {
     });
 
     it("Test if getGitHub Returns 'github.com'", () => {
-        expect(engi.getGitHub).toEqual("github.com")
+        expect(engi.getGitHub()).toEqual("github.com")
     });
 
     it("Test if getRole is overrid and prints 'Engineer' ", () => {
