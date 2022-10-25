@@ -1,4 +1,5 @@
 
+//Genreates HTML for Engineer 
 function generateEngineerHTML(Engineer){
     return `
     <div class="card text-white mb-3 col-3 mx-2" style="max-width: 18rem;">
@@ -14,6 +15,7 @@ function generateEngineerHTML(Engineer){
     `
 }
 
+//Generates HTML for Intern
 function generateInternHTML(Intern){
     return `
     <div class="card text-white mb-3 col-3 mx-2" style="max-width: 18rem;">
@@ -29,6 +31,7 @@ function generateInternHTML(Intern){
     `
 }
 
+//generate html for Manager
 function generateManagerHTML(Manager){
     return `
     <div class="card text-white mb-3 col-3 mx-2" style="max-width: 18rem;">
@@ -44,11 +47,27 @@ function generateManagerHTML(Manager){
     `
 }
 
+//Takes an array and check what type if employees they are
 function generateTeamHTML(employees){
 
+    let htmlStr = ``;
+
+    for(let i=0; i<employees.length; i++){
+        if(employees[i].getRole() == "Engineer"){
+            htmlStr += generateEngineerHTML() +"\n";
+        }
+        else if(employees[i].getRole() == "Intern"){
+            htmlStr += generateInternHTML() +"\n";
+        }
+        else if(employees[i].getRole() == "Manager"){
+            htmlStr += generateManagerHTML() +"\n";
+        }
+    }
+
+    return htmlStr
 }
 
-function generateHTML(){
+function generateHTML(employees){
     return`
 
 <!DOCTYPE html>
@@ -69,11 +88,16 @@ function generateHTML(){
         <h1 class="text-center"> Team Profiles </h1>
     </header>
 
+
+
     <!-- This is were our employees html go -->
     <employees class="row d-flex justify-content-center">
     
+        ${generateTeamHTML(employees)}
     
     </employees>
+
+
 
 </body>
 </html>
