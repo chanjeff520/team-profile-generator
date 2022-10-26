@@ -1,4 +1,4 @@
-# readme-generator 
+# team-profile-generator
 
   ## Technology Used
   
