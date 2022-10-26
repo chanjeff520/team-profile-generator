@@ -103,3 +103,5 @@ function generateHTML(employees){
 </html>
     `
 }
+
+module.exports = generateHTML;
